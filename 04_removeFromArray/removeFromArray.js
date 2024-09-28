@@ -1,19 +1,30 @@
-const removeFromArray = function (array, removeItem) {
-  let returnArray = [];
-  let removeArray = [];
-  removeArray.push(removeItem);
-  console.log("OG-Array " + array);
-  console.log("OG remove list " + removeItem);
+const removeFromArray = function () {
+  let returnArray = Array.from(arguments[0]);
+  let removeArray = Array.from(arguments[1]);
+  console.log("Got this array " + returnArray);
   console.log("Remove this " + removeArray);
 
+  // TODO: solve this one, make the tests pass
   // solution 1
+  for (let i = 0; i < returnArray.length; i++) {
+    for (let j = 0; j < removeArray.length; j++) {
+      if (returnArray[i] === removeArray[j]) {
+        returnArray[i] = "delete me plz";
+      }
+    }
+  }
+  console.log(returnArray);
+  return returnArray;
 
+  /*
   // TODO sort removeArray
   removeArray.sort();
   console.log("Sorted removeArray " + removeArray);
 
   // TODO solve for unsorted arrays.
 
+  */
+  /*
   while (removeArray.length != 0) {
     for (let i = 0; i < array.length; i++) {
       for (let j = 0; j < removeArray.length; j++) {
