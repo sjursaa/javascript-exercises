@@ -2,6 +2,7 @@ const sumAll = function () {
   let start;
   let stop;
 
+  // TODO, refactor, get checks out into their own functions, only summing in here
   // check user input is number
   if (typeof arguments[0] != "number" || typeof arguments[1] != "number") {
     return "ERROR";
