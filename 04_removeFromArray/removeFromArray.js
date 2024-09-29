@@ -1,18 +1,26 @@
 const removeFromArray = function (array, ...args) {
-  //let sourceArray = Array.from(arguments[0]);
-  //let removeArray = Array.from(arguments[1]);
+  let sourceArray = array;
+  let removeArray = args;
   let returnArray = [];
-  //console.log("Got this array " + returnArray);
-  //console.log("Remove this " + removeArray);
+  console.log("Got this array " + returnArray);
+  console.log("Remove this " + removeArray);
 
   // TODO: solve this one, make the tests pass
   // solution 1
-  array.forEach((element) => {
-    if (!args.includes(element)) {
-      returnArray.push(element);
+  // sourceArray.forEach((element) => {
+  //   if (!removeArray.includes(element)) {
+  //     returnArray.push(element);
+  //   }
+  // });
+  // console.log(returnArray);
+  // return returnArray;
+
+  // solution 2, the way I'd do it
+  for (let i = 0; i < sourceArray.length; i++) {
+    if (!removeArray.includes(sourceArray[i])) {
+      returnArray.push(sourceArray[i]);
     }
-  });
-  console.log(returnArray);
+  }
   return returnArray;
 
   /*
