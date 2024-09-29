@@ -1,18 +1,17 @@
-const removeFromArray = function () {
-  let returnArray = Array.from(arguments[0]);
-  let removeArray = Array.from(arguments[1]);
-  console.log("Got this array " + returnArray);
-  console.log("Remove this " + removeArray);
+const removeFromArray = function (array, ...args) {
+  //let sourceArray = Array.from(arguments[0]);
+  //let removeArray = Array.from(arguments[1]);
+  let returnArray = [];
+  //console.log("Got this array " + returnArray);
+  //console.log("Remove this " + removeArray);
 
   // TODO: solve this one, make the tests pass
   // solution 1
-  for (let i = 0; i < returnArray.length; i++) {
-    for (let j = 0; j < removeArray.length; j++) {
-      if (returnArray[i] === removeArray[j]) {
-        returnArray[i] = "delete me plz";
-      }
+  array.forEach((element) => {
+    if (!args.includes(element)) {
+      returnArray.push(element);
     }
-  }
+  });
   console.log(returnArray);
   return returnArray;
 
@@ -47,8 +46,6 @@ const removeFromArray = function () {
     array.slice();
   }
 */
-  console.log("Result post alg: " + array);
-  return returnArray;
 };
 
 // Do not edit below this line
